@@ -1,4 +1,11 @@
 #simple_inventory_manager
+                #lager
+lager = {
+        "obst": ["Apfel", "Trauben","Bannanen"],
+        "gemüse": ["Karotte","Zucchini","Salat"],
+        "süßigkeiten": ["Lolis","Chips"]
+    }
+
                                     #menü
 def simple_inventory_manager():
     choice = None
@@ -17,6 +24,10 @@ def simple_inventory_manager():
 
     return choice
 
+
 #Funktion abrufen
 
 choice = simple_inventory_manager()
+
+if choice == "1":
+    product = input("Produkt eingeben: ")
