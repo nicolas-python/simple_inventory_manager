@@ -40,6 +40,16 @@ def product_hinzufuegen():
         else:
             print("Kategorie nicht gefunden")
 
+#Produkte anzeigen
+
+def product_anzeigen():
+
+        category = input("Kategorie wählen: obst,gemüse,suesigkeiten: ")
+        if category in lager :
+            print(lager[category])
+        else :
+            print("Kategorie nicht gefunden")
+
 
 #Funktion abrufen
 choice = simple_inventory_manager()
@@ -47,4 +57,8 @@ choice = simple_inventory_manager()
 
 if choice == "1":
     product_hinzufuegen()
+
+if choice == "2":
+    product_anzeigen()
+
 
