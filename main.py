@@ -36,10 +36,9 @@ def product_hinzufuegen():
         if category in lager :
             lager[category].append(product)
             print("Product wurde zum lager hinzugefügt")
-            print(lager) #testen ob es auch wirklich im lager ist
+
         else:
             print("Kategorie nicht gefunden")
-
 
 
 #Funktion abrufen
