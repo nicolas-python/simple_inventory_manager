@@ -62,13 +62,15 @@ def product_loeschen():
     product = input("Produkt eingeben :")
 
     if category in lager:
-        lager[category].remove(product)
-        print("Product wurde aus dem lager entfernt")
+
+        try:
+            lager[category].remove(product)
+            print("Product wurde aus dem lager entfernt")
+        except NameError:
+            print("Produkt nicht gefunden")
 
     else:
         print("Kategorie nicht gefunden")
-
-
 
 #Funktion abrufen
 choice = simple_inventory_manager()
