@@ -2,8 +2,8 @@
                 #lager
 lager = {
         "obst": ["Apfel", "Trauben","Bannanen"],
-        "gemüse": ["Karotte","Zucchini","Salat"],
-        "süßigkeiten": ["Lolis","Chips"]
+        "gemuese": ["Karotte","Zucchini","Salat"],
+        "suesigkeiten": ["Lolis","Chips"]
     }
 
                                     #menü
@@ -25,9 +25,27 @@ def simple_inventory_manager():
     return choice
 
 
-#Funktion abrufen
 
+#Prudukt hinzfuegen
+
+def product_hinzufuegen():
+
+        category = input("Kategorie wählen: obst,gemuese,suesigkeiten: ")
+        product = input("Produkt eingeben :")
+
+        if category in lager :
+            lager[category].append(product)
+            print("Product wurde zum lager hinzugefügt")
+            print(lager) #testen ob es auch wirklich im lager ist
+        else:
+            print("Kategorie nicht gefunden")
+
+
+
+#Funktion abrufen
 choice = simple_inventory_manager()
 
+
 if choice == "1":
-    product = input("Produkt eingeben: ")
+    product_hinzufuegen()
+
