@@ -40,6 +40,8 @@ def product_hinzufuegen():
         else:
             print("Kategorie nicht gefunden")
 
+
+
 #Produkte anzeigen
 
 def product_anzeigen():
@@ -51,9 +53,25 @@ def product_anzeigen():
             print("Kategorie nicht gefunden")
 
 
+
+#Produkte löschen
+
+def product_loeschen():
+
+    category = input("Kategorie wählen: obst,gemuese,suesigkeiten: ")
+    product = input("Produkt eingeben :")
+
+    if category in lager:
+        lager[category].remove(product)
+        print("Product wurde aus dem lager entfernt")
+
+    else:
+        print("Kategorie nicht gefunden")
+
+
+
 #Funktion abrufen
 choice = simple_inventory_manager()
-
 
 if choice == "1":
     product_hinzufuegen()
@@ -61,4 +79,6 @@ if choice == "1":
 if choice == "2":
     product_anzeigen()
 
+if choice == "3":
+    product_loeschen()
 
