@@ -1,0 +1,3 @@
+obst:Apfel,Trauben,Bananen
+gemuese:Karotte,Zucchini,Salat
+suesigkeiten:Lolis,Chips

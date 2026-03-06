@@ -1,15 +1,31 @@
 #simple_inventory_manager
-                #lager
-lager = {
-        "obst": ["Apfel", "Trauben","Bannanen"],
-        "gemuese": ["Karotte","Zucchini","Salat"],
-        "suesigkeiten": ["Lolis","Chips"]
-    }
+#Lager daten importieren
+def load_lager():
+    with open("lager.txt", "r") as file: #read   : Datai lesen
+       lines = file.readlines()
+    return lines
 
-                                    #menü
+#umwandeln des txt
+def umwandeln_txt(lines):
+    lager = {}
+
+    for line in lines :
+        category, products = line.split(":")
+        products = products.split(",")
+        lager[category] = products
+
+    return lager
+
+def save_lager():
+     with open("lager.txt", "w") as file:  #w=write  :Datai überschreiben
+        for category, product in lager.items():
+            line = category + ":" + ",".join(product) + "\n"  # "\n" = zeilenumbruch das alles nacher geordnet ist
+            file.write(line)
+
+
+#menü
 def simple_inventory_manager():
     choice = None
-
     while choice not in ["1","2","3","4"]:
         print("Python Inventory Manager")
         print("1 = Product hinzufügen")
@@ -24,10 +40,10 @@ def simple_inventory_manager():
 
     return choice
 
-
+lines = load_lager()
+lager = umwandeln_txt(lines)
 
 #Prudukt hinzfuegen
-
 def product_hinzufuegen():
 
         category = input("Kategorie wählen: obst,gemuese,suesigkeiten: ")
@@ -43,7 +59,6 @@ def product_hinzufuegen():
 
 
 #Produkte anzeigen
-
 def product_anzeigen():
 
         category = input("Kategorie wählen: obst,gemüse,suesigkeiten: ")
@@ -55,7 +70,6 @@ def product_anzeigen():
 
 
 #Produkte löschen
-
 def product_loeschen():
 
     category = input("Kategorie wählen: obst,gemuese,suesigkeiten: ")
@@ -66,7 +80,7 @@ def product_loeschen():
         try:
             lager[category].remove(product)
             print("Product wurde aus dem lager entfernt")
-        except NameError:
+        except ValueError:
             print("Produkt nicht gefunden")
 
     else:
@@ -88,11 +102,7 @@ while True:
         product_loeschen()
 
     if choice == "4":
+        save_lager()
         print("Beenden")
         break
-
-
-
-
-
 
