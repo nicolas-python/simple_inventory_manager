@@ -10,6 +10,7 @@ def umwandeln_txt(lines):
     lager = {}
 
     for line in lines :
+        line = line.strip()        #entfernt \n
         category, products = line.split(":")
         products = products.split(",")
         lager[category] = products
@@ -61,7 +62,7 @@ def product_hinzufuegen():
 #Produkte anzeigen
 def product_anzeigen():
 
-        category = input("Kategorie wählen: obst,gemüse,suesigkeiten: ")
+        category = input("Kategorie wählen: obst,gemuese,suesigkeiten: ")
         if category in lager :
             print(lager[category])
         else :
@@ -105,4 +106,3 @@ while True:
         save_lager()
         print("Beenden")
         break
-
