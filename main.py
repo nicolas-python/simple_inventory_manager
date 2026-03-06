@@ -72,15 +72,27 @@ def product_loeschen():
     else:
         print("Kategorie nicht gefunden")
 
+
+
 #Funktion abrufen
-choice = simple_inventory_manager()
+while True:
+    choice = simple_inventory_manager()
 
-if choice == "1":
-    product_hinzufuegen()
+    if choice == "1":
+        product_hinzufuegen()
 
-if choice == "2":
-    product_anzeigen()
+    if choice == "2":
+        product_anzeigen()
 
-if choice == "3":
-    product_loeschen()
+    if choice == "3":
+        product_loeschen()
+
+    if choice == "4":
+        print("Beenden")
+        break
+
+
+
+
+
 
