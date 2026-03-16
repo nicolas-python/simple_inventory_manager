@@ -1,13 +1,13 @@
 # Simple Inventory Manager
 
-Ein einfacher Inventory Manager zum Hinzufügen, Anzeigen und Löschen von Produkten.
+Ein Inventory Manager zum Hinzufügen, Anzeigen und Löschen von Produkten.
 
 ## Funktionen 
 
--Hinzufügen von Produkten
--Anzeigen von Produkten
--Löschen von Produkten
--Produkte werden in einer Datei gespeichert
+- Hinzufügen von Produkten
+- Anzeigen von Produkten
+- Löschen von Produkten
+- Produkte werden in einer Datei gespeichert
 
 ## Nutzung
 
